@@ -1,5 +1,9 @@
 <form [formGroup]="responses">
-  <mat-stepper formArrayName="questions" linear>
+  <mat-stepper
+    formArrayName="questions"
+    linear
+    [orientation]="(stepperOrientation | async)!"
+  >
     <div *ngFor="let question of questions.controls; let i = index">
       <mat-step [formGroupName]="i" [stepControl]="question">
         <mat-card class="question-card">

@@ -3,6 +3,8 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QuestionData } from '../../../assets/questionsData';
 import { QuestionBase } from '../../models/QuestionBase';
 import { Router } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-questions',
@@ -13,7 +15,17 @@ export class QuestionsComponent implements OnInit {
   isLinear: boolean = true;
   questData: QuestionBase[] = QuestionData;
   breakpoint: any = '';
-  constructor(public fb: FormBuilder, private router: Router) {}
+  public stepperOrientation: any;
+
+  constructor(
+    public fb: FormBuilder,
+    private router: Router,
+    breakpointObserver: BreakpointObserver
+  ) {
+    this.stepperOrientation = breakpointObserver
+      .observe('(min-width: 800px)')
+      .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
+  }
 
   public responses: FormGroup = this.fb.group({
     questions: this.fb.array([], [Validators.required]),
