@@ -1,4 +1,10 @@
 <div class="resultChartContainer">
+  <h2>Results</h2>
+  <h3>
+    Your Score = {{ stateData?.correctAnswers }} out of
+    {{ stateData?.totalQuestions }}
+  </h3>
+  <h3>Percentage - {{ percentage | percent }}</h3>
   <canvas
     baseChart
     [data]="pieChartData"

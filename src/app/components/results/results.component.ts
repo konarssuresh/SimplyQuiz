@@ -17,6 +17,7 @@ export class ResultsComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
+  public stateData: any;
   public pieChartLabels: Label[] = ['correct answers', 'incorrect answers'];
   public pieChartData: SingleDataSet = [0, 0];
   public pieChartType: ChartType = 'pie';
@@ -27,10 +28,14 @@ export class ResultsComponent implements OnInit {
     monkeyPatchChartJsLegend();
   }
 
+  get percentage(): number {
+    return this.stateData?.correctAnswers / this.stateData?.totalQuestions;
+  }
+
   ngOnInit(): void {
     console.log(this.location.getState());
-    const stateData: any = this.location.getState();
-    const { correctAnswers, wrongAnswers } = stateData;
+    this.stateData = this.location.getState();
+    const { correctAnswers, wrongAnswers } = this.stateData;
     this.pieChartData = [correctAnswers, wrongAnswers];
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
