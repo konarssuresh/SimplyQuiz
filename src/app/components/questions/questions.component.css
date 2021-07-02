@@ -1,0 +1,11 @@
+.options > ::ng-deep .mat-grid-tile-content {
+  justify-content: flex-start;
+}
+
+.question-card {
+  margin-top: 5rem;
+}
+
+.question-title {
+  line-height: 1.5;
+}
