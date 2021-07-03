@@ -5,6 +5,7 @@ import { QuestionBase } from '../../models/QuestionBase';
 import { Router } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { shuffle } from '../../utils/commonUtils';
 
 @Component({
   selector: 'app-questions',
@@ -13,7 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class QuestionsComponent implements OnInit {
   isLinear: boolean = true;
-  questData: QuestionBase[] = QuestionData;
+  questData: QuestionBase[] = shuffle(QuestionData);
   breakpoint: any = '';
   public stepperOrientation: any;
 

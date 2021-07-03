@@ -72,4 +72,11 @@ export const QuestionData: QuestionBase[] = [
     options: ['true', 'false'],
     answer: ['false'],
   },
+  {
+    id: 10,
+    question:
+      'The . . . . . decorator allows us to define the pipe name that is globally available for use in any template in the across application',
+    options: ['pipeName', 'pipeDeco', 'Pipe', 'None'],
+    answer: ['Pipe'],
+  },
 ];

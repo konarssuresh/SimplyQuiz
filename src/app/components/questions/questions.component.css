@@ -9,3 +9,9 @@
 .question-title {
   line-height: 1.5;
 }
+
+.option-radio-button {
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}

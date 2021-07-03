@@ -17,13 +17,13 @@
             <mat-grid-list
               gutterSize="1rem"
               [cols]="breakpoint"
-              rowHeight="3:0.5"
+              rowHeight="2.5:0.5"
               (window:resize)="onResize($event)"
             >
               <ng-container *ngFor="let option of questData[i].options">
                 <mat-grid-tile class="options">
                   <mat-radio-button value="{{ option }}">
-                    {{ option }}
+                    <span class="option-radio-button">{{ option }}</span>
                   </mat-radio-button>
                 </mat-grid-tile>
               </ng-container>
