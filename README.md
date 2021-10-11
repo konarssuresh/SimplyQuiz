@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## hosted url
 
-[https://suresh-forms-assignment.web.app/](https://suresh-forms-assignment.web.app/)
+[http://3.86.184.210:9004/](http://3.86.184.210:9004/)
